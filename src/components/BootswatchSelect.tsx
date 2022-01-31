@@ -90,6 +90,11 @@ export function BootswatchSelect(
 ): JSX.Element {
   const [selectedThemeName, setSelectedThemeName] = React.useState(props.selectedThemeName);
 
+
+  React.useEffect(()=>{
+    setSelectedThemeName(props.selectedThemeName);
+  },[props.selectedThemeName])
+
   // Remove trailing slash
   const cdnLocation = props.cdnLocation ? props.cdnLocation.replace(/(.*)[/]+$/, '$1') : '';
 
